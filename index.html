@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emily Hsiao · Things I Build</title>
+<meta name="description" content="Things Emily Hsiao builds for fun, mostly for her kids and friends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Emily's portfolio. Look B (Studio). Blurb is hers, minus the Meta risk sentence (her public-material rule). -->
+<style>
+:root { --bg:#FFFFFF; --ink:#111318; --muted:#5E6470; --line:#ECEEF2; --card:#F7F8FA; --accent:#4F46E5; --chip:#EEF0FF; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#0F1115; --ink:#F2F3F6; --muted:#A0A6B2; --line:#23262E; --card:#171A20; --accent:#8B85FF; --chip:#22233A; }
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:400 17px/1.6 'Inter', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:inherit; }
+.wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+header.top { display:flex; justify-content:space-between; align-items:center; padding:28px 0; font-size:15px; }
+header.top .me { font-weight:700; }
+header.top nav a { margin-left:22px; text-decoration:none; color:var(--muted); }
+header.top nav a:hover { color:var(--ink); }
+
+.hero { padding:48px 0 56px; }
+.hero h1 { font:800 clamp(40px,6vw,68px)/1.05 'Inter', sans-serif; letter-spacing:-.035em; margin:0 0 22px; max-width:16ch; }
+.hero h1 em { font-style:normal; background:linear-gradient(90deg,#4F46E5,#DB2777); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero .blurb { font-size:19px; color:var(--muted); max-width:60ch; margin:0 0 14px; }
+.hero .why { font-size:19px; max-width:60ch; margin:0; }
+
+h2.sec { font:700 13px/1 'Inter', sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:24px 0 24px; }
+
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.proj { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; text-decoration:none; transition:transform .15s, box-shadow .15s; }
+a.proj:hover { transform:translateY(-3px) rotate(-.4deg); box-shadow:0 14px 30px rgba(17,19,24,.08); }
+.proj .pic { aspect-ratio:3/2; overflow:hidden; background:var(--chip); }
+.proj .pic img { width:100%; height:100%; object-fit:cover; display:block; }
+.proj .txt { padding:18px 20px 22px; flex:1; display:flex; flex-direction:column; }
+.proj h3 { font:700 20px/1.25 'Inter', sans-serif; letter-spacing:-.01em; margin:0 0 6px; }
+.proj p { margin:0 0 14px; font-size:15px; color:var(--muted); flex:1; }
+.meta { display:flex; flex-wrap:wrap; gap:6px; }
+.meta span { font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px; background:var(--chip); color:var(--accent); }
+.meta span.for { background:#FFF1E6; color:#B4531A; }
+
+.links { display:flex; gap:16px; margin-top:14px; font-size:14px; font-weight:600; }
+.links a { color:var(--accent); text-decoration:none; }
+.links a:hover { text-decoration:underline; }
+
+.tools { margin:64px 0 0; padding:28px; border-radius:20px; background:var(--card); border:1px solid var(--line); font-size:17px; }
+.tools b { font-weight:700; }
+
+footer { margin:64px 0 0; padding:32px 0 56px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; color:var(--muted); font-size:15px; }
+footer a { margin-right:20px; }
+.todo { background:#FFF3BF; color:#6B4E00; border-radius:4px; padding:0 4px; }
+
+@media (max-width:820px) {
+  .grid { grid-template-columns:1fr; }
+  .wrap { padding:0 16px; }
+  header.top nav a { margin-left:14px; }
+  .hero { padding:24px 0 40px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="me">Emily Hsiao</span>
+    <nav><a href="#stuff">Stuff I made</a><a href="#contact">Say hi</a></nav>
+  </header>
+
+  <section class="hero">
+    <h1>I like to <em>tinker.</em></h1>
+    <p class="blurb">Emily is a product leader with over 10 years of experience, including 6+ years at Instagram. She has led 0-to-1 new bets and scaled products, including Instants by Instagram, Stories, Reels and Groups Messaging.</p>
+    <p class="why">Outside of work I build little apps, usually because my kids or friends asked for something. Here's what I've made so far.</p>
+  </section>
+
+  <h2 class="sec" id="stuff">Stuff I made</h2>
+  <section class="grid">
+    <div class="proj">
+      <div class="pic"><img src="img/portal-card.jpg" alt="A pink kids' home screen with a unicorn, a kitten wearing pancakes and a Breakfast app"></div>
+      <div class="txt"><h3>Portal Kids</h3><p>Dusted off our discontinued Meta Portal and turned it into my kids' own home screen, with morning math, weather scenes and a sparkle portal to my daughter's world.</p>
+        <div class="meta"><span class="for">For my kids</span><span>Android</span><span>Claude Code</span></div>
+        <div class="links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7526801282263797761/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
+    </div>
+    <div class="proj">
+      <div class="pic"><img src="img/munch.jpg" alt="Mouth Munch title screen, and me playing it with pizza flying at my face"></div>
+      <div class="txt"><h3>Mouth Munch</h3><p>An AR game my 6-year-old and I vibe-coded on the couch: emojis fly at you and you open your mouth to eat them. He picked the emojis (poop, obviously). I made it to get us moving.</p>
+        <div class="meta"><span class="for">For me + my son</span><span>Face tracking</span><span>Web game</span></div>
+        <div class="links"><a href="https://ar-video-game.vercel.app" target="_blank" rel="noopener">Play it →</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7475674365678878721/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
+    </div>
+    <a class="proj" href="https://emerson-poop-tracker.vercel.app" target="_blank" rel="noopener">
+      <div class="pic"><img src="img/poop.jpg" alt="Poop chart with a toilet and 20 squares"></div>
+      <div class="txt"><h3>The Quest for Mario 64</h3><p>A potty reward chart my son and I vibe-coded together. Fill 20 squares and the toilet flushes, with confetti.</p>
+        <div class="meta"><span class="for">For my son</span><span>Next.js</span><span>Supabase</span></div></div>
+    </a>
+    <a class="proj" href="https://star-tracker-two.vercel.app" target="_blank" rel="noopener">
+      <div class="pic"><img src="img/stars.jpg" alt="Vacation Star Tracker with two columns of stars"></div>
+      <div class="txt"><h3>Vacation Star Tracker</h3><p>Stars for good choices on vacation. Every five stars unlocks a bigger TV reward.</p>
+        <div class="meta"><span class="for">For my kids</span><span>Next.js</span><span>Supabase</span></div></div>
+    </a>
+    <a class="proj" href="https://gang-of-wine.vercel.app" target="_blank" rel="noopener">
+      <div class="pic"><img src="img/wine.jpg" alt="Gang of Wine Moms Book Club welcome screen"></div>
+      <div class="txt"><h3>Gang of Wine Book Club</h3><p>The app my book club of 10 moms actually uses to vote on the next book, RSVP, and find a date that works for everyone.</p>
+        <div class="meta"><span class="for">For my friends</span><span>Next.js</span><span>Supabase</span></div></div>
+    </a>
+    <a class="proj" href="https://github.com/emilyhsiaoluu/hang-ideas" target="_blank" rel="noopener">
+      <div class="pic"><img src="img/hang.jpg" alt="Hang Ideas spinner picking karaoke and dumplings"></div>
+      <div class="txt"><h3>Hang Ideas</h3><p>My friends asked for it: a magazine-style board of hangout ideas, plus a spinner that picks the next one.</p>
+        <div class="meta"><span class="for">For my friends</span><span>Next.js</span></div></div>
+    </a>
+  </section>
+
+  <section class="tools"><b>How I build:</b> I come up with the idea and the design, and AI coding tools write most of the code. Usually Claude Code or Codex, with GitHub, Vercel and Figma.</section>
+
+  <footer id="contact">
+    <div><a href="https://github.com/emilyhsiaoluu">GitHub</a><a href="https://www.linkedin.com/in/emilyhsiao1/">LinkedIn</a><a href="mailto:hsiao.em@gmail.com">Email</a></div>
+    <div>Made by me, with Claude Code.</div>
+  </footer>
+</div>
+</body>
+</html>
