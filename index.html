@@ -26,6 +26,9 @@ header.top nav a:hover { color:var(--ink); }
 .hero h1 { font:800 clamp(40px,6vw,68px)/1.05 'Inter', sans-serif; letter-spacing:-.035em; margin:0 0 22px; max-width:16ch; }
 .hero h1 em { font-style:normal; background:linear-gradient(90deg,#4F46E5,#DB2777); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .hero .blurb { font-size:19px; color:var(--muted); max-width:60ch; margin:0 0 14px; }
+.hero .experience { padding-left:22px; }
+.hero .experience li + li { margin-top:10px; }
+.hero .experience strong { color:var(--ink); font-weight:600; }
 .hero .why { font-size:19px; max-width:60ch; margin:0; }
 
 h2.sec { font:700 13px/1 'Inter', sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:24px 0 24px; }
@@ -74,7 +77,11 @@ footer a { margin-right:20px; }
 
   <section class="hero">
     <h1>Emily Hsiao</h1>
-    <p class="blurb">Emily is a consumer product leader with over 10 years of experience, including 6+ years at Instagram. She has led 0-to-1 new bets and scaled products, including Instants by Instagram, Stories, Reels and Groups Messaging.</p>
+    <ul class="blurb experience">
+      <li><strong>Consumer product leader with 10+ years of experience</strong>, taking new ideas from 0 to 1 and growing established products.</li>
+      <li><strong>6+ years at Instagram / Meta</strong>, working on Instants by Instagram, Stories, Reels and group messaging.</li>
+    </ul>
+    <p class="blurb">But I started my career in finance and investment banking.</p>
     <p class="why">Outside of work I build little apps, usually because my kids or friends asked for something. Here's what I've made so far.</p>
   </section>
 
