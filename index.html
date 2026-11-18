@@ -72,6 +72,10 @@ header.top { justify-content:flex-end; }
 .shot-switch button { border:0; padding:0 0 4px; background:none; color:var(--muted); font:500 12px/1.5 Inter,sans-serif; cursor:pointer; border-bottom:2px solid transparent; }
 .shot-switch button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--accent); }
 .shot-switch button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.motion-pic { position:relative; }
+.motion-pic video { width:100%; height:100%; object-fit:cover; display:block; }
+.motion-toggle { position:absolute; bottom:8px; right:8px; border:1px solid #ffffff80; border-radius:20px; padding:5px 10px; color:white; background:#252332d9; font:500 12px/1.4 Inter,sans-serif; cursor:pointer; }
+.motion-toggle:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -83,8 +87,8 @@ header.top { justify-content:flex-end; }
 
   <section class="hero">
     <h1>Hi, I’m Emily.</h1>
-    <p class="blurb">I’m a consumer product leader with 10+ years of experience bringing new ideas to life and helping products grow. I spent 6+ years at Instagram / Meta, working on Instants by Instagram, Stories, Reels and group messaging—but I started my career in finance and investment banking.</p>
-    <p class="why">Outside of work I build little apps, usually because my kids or friends asked for something. Here's what I've made so far.</p>
+    <p class="blurb">I’m a consumer product leader with 10+ years of experience bringing new ideas to life and helping products grow. I spent 6+ years at Instagram / Meta, working on Instants by Instagram, Stories, Reels and group messaging. Before that, I worked at Patreon, a two-sided marketplace for creators, and at photo-sharing startups. I started my career in investment banking and finance.</p>
+    <p class="blurb">Outside of work I build little apps, usually because my kids or friends asked for something. Here's what I've made so far.</p>
   </section>
 
   <h2 class="sec" id="stuff">Stuff I made</h2>
@@ -99,7 +103,7 @@ header.top { justify-content:flex-end; }
       <div class="txt"><h3>Morning Mission</h3><p>Brushing teeth comes before Pokémon. From Emerson’s world, Morning Mission turns his morning jobs and a few math questions into five minutes on TCGplayer, his favorite Pokémon trading website.</p></div>
     </div>
     <div class="proj">
-      <div class="pic portal-pic"><img src="img/portal-avery.jpg" alt="Avery’s pink castle world with a unicorn and kittens"></div>
+      <div class="pic portal-pic motion-pic"><video id="world-transition" muted loop playsinline preload="metadata" poster="img/portal-avery.jpg" aria-label="Emerson’s world transforms into Avery’s castle world"><source src="media/world-transition.mp4" type="video/mp4"></video><button class="motion-toggle" type="button" aria-controls="world-transition" aria-label="Play world transition">Play</button></div>
       <div class="txt"><h3>Emerson’s Sister</h3><p>Avery got jealous of Emerson’s Portal, so I made her a world of her own. A little side door leads from his home to her castle, with kittens, a unicorn and a magical way back.</p></div>
     </div>
     <div class="proj">
@@ -130,6 +134,22 @@ header.top { justify-content:flex-end; }
   </footer>
 </div>
 <script>
+const motion = document.getElementById('world-transition');
+const motionButton = document.querySelector('.motion-toggle');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+function syncMotionButton() {
+  motionButton.textContent = motion.paused ? 'Play' : 'Pause';
+  motionButton.setAttribute('aria-label', (motion.paused ? 'Play' : 'Pause') + ' world transition');
+}
+motion.addEventListener('play', syncMotionButton);
+motion.addEventListener('pause', syncMotionButton);
+motionButton.addEventListener('click', () => {
+  if (motion.paused) motion.play().catch(syncMotionButton);
+  else motion.pause();
+});
+reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) motion.pause(); });
+if (!reducedMotion.matches) motion.play().catch(syncMotionButton);
+
 document.querySelectorAll('[data-shot]').forEach(button => button.addEventListener('click', () => {
   const math = button.dataset.shot === 'math';
   const image = document.getElementById('mission-image');
