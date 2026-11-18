@@ -66,67 +66,77 @@ footer a { margin-right:20px; }
   header.top nav a { margin-left:14px; }
   .hero { padding:24px 0 40px; }
 }
+header.top { justify-content:flex-end; }
+.proj .portal-pic { aspect-ratio:1280/740; }
+.shot-switch { display:flex; gap:16px; padding:12px 20px 0; }
+.shot-switch button { border:0; padding:0 0 4px; background:none; color:var(--muted); font:500 12px/1.5 Inter,sans-serif; cursor:pointer; border-bottom:2px solid transparent; }
+.shot-switch button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--accent); }
+.shot-switch button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <span class="me">Emily Hsiao</span>
+    
     <nav><a href="#stuff">Stuff I made</a><a href="#contact">Say hi</a></nav>
   </header>
 
   <section class="hero">
-    <h1>Emily Hsiao</h1>
-    <ul class="blurb experience">
-      <li><strong>Consumer product leader with 10+ years of experience</strong>, taking new ideas from 0 to 1 and growing established products.</li>
-      <li><strong>6+ years at Instagram / Meta</strong>, working on Instants by Instagram, Stories, Reels and group messaging.</li>
-    </ul>
-    <p class="blurb">But I started my career in finance and investment banking.</p>
+    <h1>Hi, I’m Emily.</h1>
+    <p class="blurb">I’m a consumer product leader with 10+ years of experience bringing new ideas to life and helping products grow. I spent 6+ years at Instagram / Meta, working on Instants by Instagram, Stories, Reels and group messaging—but I started my career in finance and investment banking.</p>
     <p class="why">Outside of work I build little apps, usually because my kids or friends asked for something. Here's what I've made so far.</p>
   </section>
 
   <h2 class="sec" id="stuff">Stuff I made</h2>
   <section class="grid">
     <div class="proj">
-      <div class="pic"><img src="img/portal-card.jpg" alt="A pink kids' home screen with a unicorn, a kitten wearing pancakes and a Breakfast app"></div>
-      <div class="txt"><h3>Portal Kids</h3><p>Dusted off our discontinued Meta Portal and turned it into my kids' own home screen, with morning math, weather scenes and two playful worlds. Now a Minecraft-inspired mini-game lets my son collect floating materials and build a portal home.</p>
-        <div class="meta"><span class="for">For my kids</span><span>Android</span><span>Codex + Claude Code</span></div>
-        <details class="build-note"><summary>Latest build · Nov 18, 2026</summary><p>I wanted switching worlds to feel like part of the game. We tried three portal styles, kept the castle world visible behind a translucent orb, and made every collected item add more blocks—in any order. The final doorway blooms purple; a wiggling Creeper offers a shortcut.</p><p>I also caught a transition that started from the old castle entrance instead of the thing you tapped. It now expands from the doorway or Creeper. All six collection orders were checked on the device, with automated checks for rapid taps and interrupted animations.</p></details>
-        <div class="links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7526801282263797761/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
+      <div class="pic portal-pic"><img src="img/portal-emerson.jpg" alt="Emerson’s home screen with Pokémon, weather and his favorite apps"></div>
+      <div class="txt"><h3>Portal Kids</h3><p>Dusted off our discontinued Meta Portal and made Emerson his own home screen, with his favorite apps, Pokémon and a little world that changes with the weather.</p><div class="links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7526801282263797761/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
+    </div>
+    <div class="proj">
+      <div class="pic portal-pic"><img id="mission-image" src="img/morning-checklist.jpg" alt="Morning Mission with all five morning jobs checked off"></div>
+      <div class="shot-switch" aria-label="Morning Mission screenshots"><button type="button" aria-pressed="true" data-shot="checklist">Morning jobs</button><button type="button" aria-pressed="false" data-shot="math">Math time</button></div>
+      <div class="txt"><h3>Morning Mission</h3><p>Brushing teeth comes before Pokémon. From Emerson’s world, Morning Mission turns his morning jobs and a few math questions into five minutes on TCGplayer, his favorite Pokémon trading website.</p></div>
+    </div>
+    <div class="proj">
+      <div class="pic portal-pic"><img src="img/portal-avery.jpg" alt="Avery’s pink castle world with a unicorn and kittens"></div>
+      <div class="txt"><h3>Emerson’s Sister</h3><p>Avery got jealous of Emerson’s Portal, so I made her a world of her own. A little side door leads from his home to her castle, with kittens, a unicorn and a magical way back.</p></div>
     </div>
     <div class="proj">
       <div class="pic"><img src="img/munch.jpg" alt="Mouth Munch title screen, and me playing it with pizza flying at my face"></div>
       <div class="txt"><h3>Mouth Munch</h3><p>An AR game my 6-year-old and I vibe-coded on the couch: emojis fly at you and you open your mouth to eat them. He picked the emojis (poop, obviously). I made it to get us moving.</p>
-        <div class="meta"><span class="for">For me + my son</span><span>Face tracking</span><span>Web game</span></div>
         <div class="links"><a href="https://ar-video-game.vercel.app" target="_blank" rel="noopener">Play it →</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7475674365678878721/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
     </div>
     <a class="proj" href="https://emerson-poop-tracker.vercel.app" target="_blank" rel="noopener">
       <div class="pic"><img src="img/poop.jpg" alt="Poop chart with a toilet and 20 squares"></div>
-      <div class="txt"><h3>The Quest for Mario 64</h3><p>A potty reward chart my son and I vibe-coded together. Fill 20 squares and the toilet flushes, with confetti.</p>
-        <div class="meta"><span class="for">For my son</span><span>Next.js</span><span>Supabase</span></div></div>
+      <div class="txt"><h3>The Quest for Mario 64</h3><p>A potty reward chart my son and I vibe-coded together. Fill 20 squares and the toilet flushes, with confetti.</p></div>
     </a>
     <a class="proj" href="https://star-tracker-two.vercel.app" target="_blank" rel="noopener">
       <div class="pic"><img src="img/stars.jpg" alt="Vacation Star Tracker with two columns of stars"></div>
-      <div class="txt"><h3>Vacation Star Tracker</h3><p>Stars for good choices on vacation. Every five stars unlocks a bigger TV reward.</p>
-        <div class="meta"><span class="for">For my kids</span><span>Next.js</span><span>Supabase</span></div></div>
+      <div class="txt"><h3>Vacation Star Tracker</h3><p>Stars for good choices on vacation. Every five stars unlocks a bigger TV reward.</p></div>
     </a>
     <a class="proj" href="https://gang-of-wine.vercel.app" target="_blank" rel="noopener">
       <div class="pic"><img src="img/wine.jpg" alt="Gang of Wine Moms Book Club welcome screen"></div>
-      <div class="txt"><h3>Gang of Wine Book Club</h3><p>The app my book club of 10 moms actually uses to vote on the next book, RSVP, and find a date that works for everyone.</p>
-        <div class="meta"><span class="for">For my friends</span><span>Next.js</span><span>Supabase</span></div></div>
+      <div class="txt"><h3>Gang of Wine Book Club</h3><p>The app my book club of 10 moms actually uses to vote on the next book, RSVP, and find a date that works for everyone.</p></div>
     </a>
     <a class="proj" href="https://github.com/emilyhsiaoluu/hang-ideas" target="_blank" rel="noopener">
       <div class="pic"><img src="img/hang.jpg" alt="Hang Ideas spinner picking karaoke and dumplings"></div>
-      <div class="txt"><h3>Hang Ideas</h3><p>My friends asked for it: a magazine-style board of hangout ideas, plus a spinner that picks the next one.</p>
-        <div class="meta"><span class="for">For my friends</span><span>Next.js</span></div></div>
+      <div class="txt"><h3>Hang Ideas</h3><p>My friends asked for it: a magazine-style board of hangout ideas, plus a spinner that picks the next one.</p></div>
     </a>
   </section>
-
-  <section class="tools"><b>How I build:</b> I come up with the idea and the design, and AI coding tools write all of the code—usually Claude Code, Codex, or whichever AI I feel like using that day (or still have tokens left on), with GitHub, Vercel and Figma.</section>
 
   <footer id="contact">
     <div><a href="https://github.com/emilyhsiaoluu">GitHub</a><a href="https://www.linkedin.com/in/emilyhsiao1/">LinkedIn</a><a href="mailto:hsiao.em@gmail.com">Email</a></div>
   </footer>
 </div>
+<script>
+document.querySelectorAll('[data-shot]').forEach(button => button.addEventListener('click', () => {
+  const math = button.dataset.shot === 'math';
+  const image = document.getElementById('mission-image');
+  image.src = math ? 'img/morning-math.jpg' : 'img/morning-checklist.jpg';
+  image.alt = math ? 'Morning Mission math question with a five-minute reward' : 'Morning Mission with all five morning jobs checked off';
+  document.querySelectorAll('[data-shot]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+}));
+</script>
 </body>
 </html>
