@@ -46,6 +46,10 @@ a.proj:hover { transform:translateY(-3px) rotate(-.4deg); box-shadow:0 14px 30px
 .links a { color:var(--accent); text-decoration:none; }
 .links a:hover { text-decoration:underline; }
 
+.build-note { margin-top:14px; font-size:14px; }
+.build-note summary { color:var(--accent); font-weight:600; cursor:pointer; }
+.build-note p { margin:10px 0 0; font-size:14px; }
+
 .tools { margin:64px 0 0; padding:28px; border-radius:20px; background:var(--card); border:1px solid var(--line); font-size:17px; }
 .tools b { font-weight:700; }
 
@@ -78,8 +82,9 @@ footer a { margin-right:20px; }
   <section class="grid">
     <div class="proj">
       <div class="pic"><img src="img/portal-card.jpg" alt="A pink kids' home screen with a unicorn, a kitten wearing pancakes and a Breakfast app"></div>
-      <div class="txt"><h3>Portal Kids</h3><p>Dusted off our discontinued Meta Portal and turned it into my kids' own home screen, with morning math, weather scenes and a sparkle portal to my daughter's world.</p>
-        <div class="meta"><span class="for">For my kids</span><span>Android</span><span>Claude Code</span></div>
+      <div class="txt"><h3>Portal Kids</h3><p>Dusted off our discontinued Meta Portal and turned it into my kids' own home screen, with morning math, weather scenes and two playful worlds. Now a Minecraft-inspired mini-game lets my son collect floating materials and build a portal home.</p>
+        <div class="meta"><span class="for">For my kids</span><span>Android</span><span>Codex + Claude Code</span></div>
+        <details class="build-note"><summary>Latest build · Nov 18, 2026</summary><p>I wanted switching worlds to feel like part of the game. We tried three portal styles, kept the castle world visible behind a translucent orb, and made every collected item add more blocks—in any order. The final doorway blooms purple; a wiggling Creeper offers a shortcut.</p><p>I also caught a transition that started from the old castle entrance instead of the thing you tapped. It now expands from the doorway or Creeper. All six collection orders were checked on the device, with automated checks for rapid taps and interrupted animations.</p></details>
         <div class="links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7526801282263797761/" target="_blank" rel="noopener">LinkedIn post →</a></div></div>
     </div>
     <div class="proj">
@@ -114,7 +119,7 @@ footer a { margin-right:20px; }
 
   <footer id="contact">
     <div><a href="https://github.com/emilyhsiaoluu">GitHub</a><a href="https://www.linkedin.com/in/emilyhsiao1/">LinkedIn</a><a href="mailto:hsiao.em@gmail.com">Email</a></div>
-    <div>Made by me, with Claude Code.</div>
+    <div>Made by me, with Claude Code + Codex.</div>
   </footer>
 </div>
 </body>
